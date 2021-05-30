@@ -1,4 +1,4 @@
-# atoms
+# templates
 
 ## 役割
 

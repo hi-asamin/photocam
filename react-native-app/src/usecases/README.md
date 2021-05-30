@@ -1,4 +1,4 @@
-# atoms
+# usecases
 
 ## 役割
 
