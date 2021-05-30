@@ -1,4 +1,4 @@
-# atoms
+# domain
 
 ## 役割
 
