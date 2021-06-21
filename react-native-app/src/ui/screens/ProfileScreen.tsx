@@ -10,13 +10,14 @@ import ListImage from '../components/atoms/ListImage';
 // import ImageEnlargement from '../components/atoms/ImageEnlargement';
 
 export default function ProfileScreen() {
-  const [images, setImages] = useState([]);
-  const [visible, setIsVisible] = useState(false);
+  // const [images, setImages] = useState([]);
+  const [backVisible, setIsBackVisible] = useState(false);
+  const [profileVisible, setIsProfileVisible] = useState(false);
 
-  const imageEnlargement = (image) => {
-    setImages(image);
-    setIsVisible(true);
-  };
+  // const imageEnlargement = (image) => {
+  //   setImages(image);
+  //   setIsVisible(true);
+  // };
 
   // テスト用画像データ
   const backImages = [
@@ -29,17 +30,24 @@ export default function ProfileScreen() {
   return (
     <View style={styles.container}>
       <ImageView
-        images={images}
+        images={backImages}
         imageIndex={0}
-        visible={visible}
+        visible={backVisible}
         swipeToCloseEnabled
-        onRequestClose={() => setIsVisible(false)}
+        onRequestClose={() => setIsBackVisible(false)}
+      />
+      <ImageView
+        images={profileImages}
+        imageIndex={0}
+        visible={profileVisible}
+        swipeToCloseEnabled
+        onRequestClose={() => setIsProfileVisible(false)}
       />
       <View style={styles.profileContainer}>
         <View style={styles.imageContainer}>
           <TouchableOpacity
             style={styles.profileBackImage}
-            onPress={() => imageEnlargement(backImages)}
+            onPress={() => setIsBackVisible(true)}
           >
             <Image
               style={styles.profileBackImage}
@@ -49,7 +57,7 @@ export default function ProfileScreen() {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.profileImage}
-            onPress={() => imageEnlargement(profileImages)}
+            onPress={() => setIsProfileVisible(true)}
           >
             <Image
               style={styles.profileImage}
@@ -97,9 +105,7 @@ export default function ProfileScreen() {
         </View>
         <View style={styles.profileStatement}>
           <Text>
-            プロフィール文。以下150文字。
-            {'\n'}
-            １２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０
+            プロフィール文。以下150文字。６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０
             {'\n'}
             １２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０
             {'\n'}
@@ -118,7 +124,6 @@ export default function ProfileScreen() {
               <Icon name="instagram" size={15} />
               <Text style={styles.snsLink}>https://www.instagram.com/?hl=ja</Text>
             </View>
-
           </Hyperlink>
 
         </View>
@@ -285,7 +290,7 @@ const styles = StyleSheet.create({
 
   snsLinks: {
     flexDirection: 'row',
-    marginTop: 5,
+    marginTop: 7,
   },
 
   snsLink: {

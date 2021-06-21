@@ -10,8 +10,11 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function ListImage(props) {
-  // eslint-disable-next-line react/prop-types
+type Props = {
+  url: string,
+}
+
+export default function ListImage(props: Props) {
   const { url } = props;
   return (
     <View>
