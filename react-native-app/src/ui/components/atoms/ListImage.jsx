@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  StyleSheet, TouchableOpacity, Image,
+  StyleSheet, TouchableOpacity, Image, View,
 } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -14,14 +14,14 @@ export default function ListImage(props) {
   // eslint-disable-next-line react/prop-types
   const { url } = props;
   return (
-    // <View style={styles.listContainer}>
-    <TouchableOpacity>
-      <Image
-        style={styles.listImage}
-        resizeMode="stretch"
-        source={{ uri: url }}
-      />
-    </TouchableOpacity>
-    // </View>
+    <View>
+      <TouchableOpacity>
+        <Image
+          style={styles.listImage}
+          resizeMode="stretch"
+          source={{ uri: url }}
+        />
+      </TouchableOpacity>
+    </View>
   );
 }
