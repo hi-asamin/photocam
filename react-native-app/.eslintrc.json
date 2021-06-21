@@ -14,8 +14,10 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
+    "import/no-unresolved": "off",
     "no-use-before-define": "off",
     "react/jsx-filename-extension": ["error", { "extensions": [".tsx", "jsx", ".ts", "js"] }],
-    "complexity": ["error", 10]
+    "complexity": ["error", 10],
+    "object-curly-newline": "off"
   }
 }
