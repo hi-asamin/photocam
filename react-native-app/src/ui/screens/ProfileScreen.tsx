@@ -1,21 +1,14 @@
 import React, { useState } from 'react';
-import { View, Image, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { View, Image, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import ImageView from 'react-native-image-viewing';
 import Hyperlink from 'react-native-hyperlink';
 import Icon from 'react-native-vector-icons/Feather';
 
-import ListImage from 'src/ui/components/atoms/ListImage';
-// import ImageEnlargement from '../components/atoms/ImageEnlargement';
+import ListImages from 'src/ui/components/molecules/ListImages';
 
 export default function ProfileScreen() {
-  // const [images, setImages] = useState([]);
   const [backVisible, setIsBackVisible] = useState(false);
   const [profileVisible, setIsProfileVisible] = useState(false);
-
-  // const imageEnlargement = (image) => {
-  //   setImages(image);
-  //   setIsVisible(true);
-  // };
 
   // テスト用画像データ
   const backImages = [{ uri: 'https://www.bepal.net/wp-content/uploads/2020/07/IMG_9902.jpg' }];
@@ -39,11 +32,25 @@ export default function ProfileScreen() {
       />
       <View style={styles.profileContainer}>
         <View style={styles.imageContainer}>
-          <TouchableOpacity style={styles.profileBackImage} onPress={() => setIsBackVisible(true)}>
-            <Image style={styles.profileBackImage} resizeMode="stretch" source={backImages} />
+          <TouchableOpacity
+            style={styles.profileBackImage}
+            onPress={() => setIsBackVisible(true)}
+          >
+            <Image
+              style={styles.profileBackImage}
+              resizeMode="stretch"
+              source={backImages}
+            />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.profileImage} onPress={() => setIsProfileVisible(true)}>
-            <Image style={styles.profileImage} resizeMode="contain" source={profileImages} />
+          <TouchableOpacity
+            style={styles.profileImage}
+            onPress={() => setIsProfileVisible(true)}
+          >
+            <Image
+              style={styles.profileImage}
+              resizeMode="contain"
+              source={profileImages}
+            />
           </TouchableOpacity>
         </View>
         <View style={styles.userProfile}>
@@ -107,26 +114,7 @@ export default function ProfileScreen() {
           </Hyperlink>
         </View>
       </View>
-      <ScrollView style={styles.postList}>
-        <View style={styles.listContainer}>
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-        </View>
-      </ScrollView>
+      <ListImages />
     </View>
   );
 }
@@ -173,9 +161,8 @@ const styles = StyleSheet.create({
 
   imageContainer: {
     height: 120,
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
+
   container: {
     flex: 1,
   },
@@ -242,13 +229,4 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
 
-  postList: {
-    flex: 1,
-  },
-
-  listContainer: {
-    paddingHorizontal: 1,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-  },
 });
