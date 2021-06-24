@@ -4,15 +4,17 @@ import ImageView from 'react-native-image-viewing';
 import Hyperlink from 'react-native-hyperlink';
 import Icon from 'react-native-vector-icons/Feather';
 
-import ListImages from 'src/ui/components/molecules/ListImages';
+import { ListImages } from 'src/ui/components/molecules/ListImages';
 
-export default function ProfileScreen() {
+// テスト用画像データ
+const backImages = [{ uri: 'https://www.bepal.net/wp-content/uploads/2020/07/IMG_9902.jpg' }];
+const profileImages = [
+  { uri: 'https://your-magazine.net/wp-content/uploads/2018/02/naganomei-35-a.jpg' },
+];
+
+export const ProfileScreen = () => {
   const [backVisible, setIsBackVisible] = useState(false);
   const [profileVisible, setIsProfileVisible] = useState(false);
-
-  // テスト用画像データ
-  const backImages = [{ uri: 'https://www.bepal.net/wp-content/uploads/2020/07/IMG_9902.jpg' }];
-  const profileImages = [{ uri: 'https://your-magazine.net/wp-content/uploads/2018/02/naganomei-35-a.jpg' }];
 
   return (
     <View style={styles.container}>
@@ -32,25 +34,11 @@ export default function ProfileScreen() {
       />
       <View style={styles.profileContainer}>
         <View style={styles.imageContainer}>
-          <TouchableOpacity
-            style={styles.profileBackImage}
-            onPress={() => setIsBackVisible(true)}
-          >
-            <Image
-              style={styles.profileBackImage}
-              resizeMode="stretch"
-              source={backImages}
-            />
+          <TouchableOpacity style={styles.profileBackImage} onPress={() => setIsBackVisible(true)}>
+            <Image style={styles.profileBackImage} resizeMode="stretch" source={backImages} />
           </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.profileImage}
-            onPress={() => setIsProfileVisible(true)}
-          >
-            <Image
-              style={styles.profileImage}
-              resizeMode="contain"
-              source={profileImages}
-            />
+          <TouchableOpacity style={styles.profileImage} onPress={() => setIsProfileVisible(true)}>
+            <Image style={styles.profileImage} resizeMode="contain" source={profileImages} />
           </TouchableOpacity>
         </View>
         <View style={styles.userProfile}>
@@ -60,12 +48,18 @@ export default function ProfileScreen() {
             <Text>神奈川県横浜市</Text>
             <Text style={styles.followYes}>フォローされています</Text>
           </View>
-          {/* <View style={styles.profileButton}>
-            <TouchableOpacity style={styles.buttonContainer}>
-              <Text style={styles.buttonLabel}>プロフィール編集</Text>
-            </TouchableOpacity>
-          </View> */}
+
           <View>
+            {/* <View style={styles.profileButton}>
+              <TouchableOpacity
+                style={styles.buttonContainer}
+                onPress={() => {
+                  navigation.navigate('ProfileEdit');
+                }}
+              >
+                <Text style={styles.buttonLabel}>プロフィール編集</Text>
+              </TouchableOpacity>
+            </View> */}
             <View style={styles.profileButton}>
               <TouchableOpacity style={styles.buttonContainer}>
                 <Text style={styles.buttonLabel}>フォロー中</Text>
@@ -104,12 +98,20 @@ export default function ProfileScreen() {
               <Text style={styles.snsLink}>https://www.youtube.com/</Text>
             </View>
             <View style={styles.snsLinks}>
-              <Icon name="facebook" size={15} />
-              <Text style={styles.snsLink}>https://ja-jp.facebook.com/</Text>
+              <Icon name="twitter" size={15} />
+              <Text style={styles.snsLink}>https://twitter.com/</Text>
             </View>
             <View style={styles.snsLinks}>
               <Icon name="instagram" size={15} />
               <Text style={styles.snsLink}>https://www.instagram.com/?hl=ja</Text>
+            </View>
+            <View style={styles.snsLinks}>
+              <Icon name="facebook" size={15} />
+              <Text style={styles.snsLink}>https://ja-jp.facebook.com/</Text>
+            </View>
+            <View style={styles.snsLinks}>
+              <Icon name="info" size={15} />
+              <Text style={styles.snsLink}>https://qiita.com/</Text>
             </View>
           </Hyperlink>
         </View>
@@ -117,7 +119,7 @@ export default function ProfileScreen() {
       <ListImages />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   profileImage: {
@@ -133,13 +135,14 @@ const styles = StyleSheet.create({
 
   profileContainer: {
     flex: 1,
+    marginBottom: 35,
   },
 
   countContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignSelf: 'flex-start',
-    marginTop: 15,
+    marginTop: 10,
   },
 
   counter: {
@@ -148,7 +151,6 @@ const styles = StyleSheet.create({
 
   countNum: {
     fontSize: 16,
-    lineHeight: 16,
     fontWeight: '500',
     textAlign: 'center',
   },
@@ -190,7 +192,6 @@ const styles = StyleSheet.create({
   followYes: {
     marginTop: 5,
     fontSize: 12,
-    lineHeight: 16,
     color: '#848484',
   },
 
@@ -198,7 +199,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around',
     flexDirection: 'row',
-    marginTop: 20,
+    marginTop: 15,
   },
 
   buttonContainer: {
@@ -221,12 +222,11 @@ const styles = StyleSheet.create({
 
   snsLinks: {
     flexDirection: 'row',
-    marginTop: 7,
+    marginTop: 5,
   },
 
   snsLink: {
     marginLeft: 5,
     fontSize: 12,
   },
-
 });

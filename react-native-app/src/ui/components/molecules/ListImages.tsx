@@ -12,16 +12,15 @@ const styles = StyleSheet.create({
   listImage: {
     width: ITEM_WIDTH / 3,
     height: ITEM_WIDTH / 3,
-    // borderWidth: 1,
-    // borderColor: '#FFFFFF',
   },
 });
 
 // 一覧表示用画像データ
-type props = {
+export interface props {
   key: string;
   imageUrl: string;
-};
+}
+
 const imageList: props[] = [
   {
     key: '1',
@@ -77,7 +76,7 @@ const imageList: props[] = [
   },
 ];
 
-export default function ListImages() {
+export const ListImages = () => {
   const renderItem = ({ item }: { item: props }) => (
     <View style={styles.listImage}>
       <TouchableOpacity>
@@ -96,4 +95,4 @@ export default function ListImages() {
       />
     </View>
   );
-}
+};
