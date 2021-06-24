@@ -17,67 +17,67 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function ListImages() {
-  // 一覧表示用画像データ
-  type props = {
-    key: string;
-    imageUrl: string;
-  };
-  const imageList: props[] = [
-    {
-      key: '1',
-      imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
-    },
-    {
-      key: '2',
-      imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
-    },
-    {
-      key: '3',
-      imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
-    },
-    {
-      key: '4',
-      imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
-    },
-    {
-      key: '5',
-      imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
-    },
-    {
-      key: '7',
-      imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
-    },
-    {
-      key: '8',
-      imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
-    },
-    {
-      key: '9',
-      imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
-    },
-    {
-      key: '10',
-      imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
-    },
-    {
-      key: '11',
-      imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
-    },
-    {
-      key: '12',
-      imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
-    },
-    {
-      key: '13',
-      imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
-    },
-    {
-      key: '14',
-      imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
-    },
-  ];
+// 一覧表示用画像データ
+type props = {
+  key: string;
+  imageUrl: string;
+};
+const imageList: props[] = [
+  {
+    key: '1',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '2',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '3',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '4',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '5',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '7',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '8',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '9',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '10',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '11',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '12',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '13',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '14',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+];
 
+export default function ListImages() {
   const renderItem = ({ item }: { item: props }) => (
     <View style={styles.listImage}>
       <TouchableOpacity>
