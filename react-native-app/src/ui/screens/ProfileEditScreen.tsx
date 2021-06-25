@@ -21,34 +21,34 @@ const profileImages = [
 ];
 
 // RNPickerSelect
-export interface props {
+export interface PickerData {
   label: string;
   value: string;
 }
 
-const areaList: props[] = [
+const areaList: PickerData[] = [
   {
     label: '関西',
-    value: '関西',
+    value: 'kansai',
   },
   {
     label: '関東',
-    value: '関東',
+    value: 'kantou',
   },
 ];
 
-const prefecturesList: props[] = [
+const prefecturesList: PickerData[] = [
   {
     label: '東京都',
-    value: '東京都',
+    value: 'tokyo',
   },
   {
     label: '神奈川県',
-    value: '神奈川県',
+    value: 'kanagawa',
   },
   {
     label: '千葉県',
-    value: '千葉県',
+    value: 'tiba',
   },
 ];
 

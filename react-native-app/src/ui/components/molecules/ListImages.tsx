@@ -16,12 +16,12 @@ const styles = StyleSheet.create({
 });
 
 // 一覧表示用画像データ
-export interface props {
+export interface ImageData {
   key: string;
   imageUrl: string;
 }
 
-const imageList: props[] = [
+const imageList: ImageData[] = [
   {
     key: '1',
     imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
@@ -77,7 +77,7 @@ const imageList: props[] = [
 ];
 
 export const ListImages = () => {
-  const renderItem = ({ item }: { item: props }) => (
+  const renderItem = ({ item }: { item: ImageData }) => (
     <View style={styles.listImage}>
       <TouchableOpacity>
         <Image style={styles.listImage} resizeMode="stretch" source={{ uri: item.imageUrl }} />
