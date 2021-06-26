@@ -4,8 +4,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import { HomeStack } from 'src/navigator/stacks/HomeStack';
-import { ProfileStack } from 'src/navigator/stacks/ProfileStack';
+import { HomeStack } from 'src/navigator/home';
+import { ProfileStack } from 'src/navigator/profile';
+
+import { bottomTabs } from 'src/config/screens';
 
 const Tab = createBottomTabNavigator();
 
@@ -13,7 +15,7 @@ export const Navigator = () => (
   <NavigationContainer>
     <Tab.Navigator>
       <Tab.Screen
-        name="HomeTab"
+        name={bottomTabs.home}
         component={HomeStack}
         options={{
           tabBarLabel: '',
@@ -21,7 +23,7 @@ export const Navigator = () => (
         }}
       />
       <Tab.Screen
-        name="ProfileTab"
+        name={bottomTabs.profile}
         component={ProfileStack}
         options={{
           tabBarLabel: '',
