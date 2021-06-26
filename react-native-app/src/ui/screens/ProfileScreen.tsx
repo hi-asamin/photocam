@@ -5,6 +5,7 @@ import Hyperlink from 'react-native-hyperlink';
 import Icon from 'react-native-vector-icons/Feather';
 
 import { ListImages } from 'src/ui/components/molecules/ListImages';
+import { FOLLOW_USERS, PROFILE_EDIT } from 'src/config/screens';
 
 // テスト用画像データ
 const backImages = [{ uri: 'https://www.bepal.net/wp-content/uploads/2020/07/IMG_9902.jpg' }];
@@ -12,7 +13,8 @@ const profileImages = [
   { uri: 'https://your-magazine.net/wp-content/uploads/2018/02/naganomei-35-a.jpg' },
 ];
 
-export const ProfileScreen = () => {
+export const ProfileScreen = (props) => {
+  const { navigation } = props;
   const [backVisible, setIsBackVisible] = useState(false);
   const [profileVisible, setIsProfileVisible] = useState(false);
 
@@ -50,34 +52,44 @@ export const ProfileScreen = () => {
           </View>
 
           <View>
-            {/* <View style={styles.profileButton}>
+            <View style={styles.profileButton}>
               <TouchableOpacity
                 style={styles.buttonContainer}
                 onPress={() => {
-                  navigation.navigate('ProfileEdit');
+                  navigation.navigate(PROFILE_EDIT);
                 }}
               >
                 <Text style={styles.buttonLabel}>プロフィール編集</Text>
               </TouchableOpacity>
-            </View> */}
-            <View style={styles.profileButton}>
+            </View>
+            {/* <View style={styles.profileButton}>
               <TouchableOpacity style={styles.buttonContainer}>
                 <Text style={styles.buttonLabel}>フォロー中</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.buttonContainer}>
                 <Text style={styles.buttonLabel}>メッセージ</Text>
               </TouchableOpacity>
-            </View>
+            </View> */}
             <View style={styles.countContainer}>
               <TouchableOpacity style={styles.counter}>
                 <Text style={styles.countNum}>999999</Text>
                 <Text style={styles.countLabel}>投稿</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.counter}>
+              <TouchableOpacity
+                style={styles.counter}
+                onPress={() => {
+                  navigation.navigate(FOLLOW_USERS);
+                }}
+              >
                 <Text style={styles.countNum}>999999</Text>
                 <Text style={styles.countLabel}>フォロー中</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.counter}>
+              <TouchableOpacity
+                style={styles.counter}
+                onPress={() => {
+                  navigation.navigate(FOLLOW_USERS);
+                }}
+              >
                 <Text style={styles.countNum}>999999</Text>
                 <Text style={styles.countLabel}>フォロワー</Text>
               </TouchableOpacity>

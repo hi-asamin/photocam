@@ -40,18 +40,21 @@ export interface Props {
   followFlg: boolean;
 }
 
-export const SwitchButton = ({ followFlg }: Props) => (
-  <View>
-    <TouchableOpacity>
-      {followFlg ? (
-        <View style={styles.buttonFollowContainer}>
-          <Text style={styles.buttonFollowLabel}>フォロー</Text>
-        </View>
-      ) : (
-        <View style={styles.buttonUnFollowContainer}>
-          <Text style={styles.buttonUnFollowLabel}>フォローする</Text>
-        </View>
-      )}
-    </TouchableOpacity>
-  </View>
-);
+export const SwitchButton = (props: Props) => {
+  const { followFlg } = props;
+  return (
+    <View>
+      <TouchableOpacity>
+        {followFlg ? (
+          <View style={styles.buttonFollowContainer}>
+            <Text style={styles.buttonFollowLabel}>フォロー</Text>
+          </View>
+        ) : (
+          <View style={styles.buttonUnFollowContainer}>
+            <Text style={styles.buttonUnFollowLabel}>フォローする</Text>
+          </View>
+        )}
+      </TouchableOpacity>
+    </View>
+  );
+};

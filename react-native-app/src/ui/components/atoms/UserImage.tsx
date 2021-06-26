@@ -17,8 +17,11 @@ export interface Props {
   style?: any;
 }
 
-export const UserImage = ({ imageUrl, style }: Props) => (
-  <View>
-    <Image style={[styles.userImage, style]} resizeMode="stretch" source={{ uri: imageUrl }} />
-  </View>
-);
+export const UserImage = (props: Props) => {
+  const { imageUrl, style } = props;
+  return (
+    <View>
+      <Image style={[styles.userImage, style]} resizeMode="stretch" source={{ uri: imageUrl }} />
+    </View>
+  );
+};

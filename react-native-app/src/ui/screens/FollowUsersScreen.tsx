@@ -4,11 +4,6 @@ import Icon from 'react-native-vector-icons/Feather';
 
 import { ListUsers } from 'src/ui/components/molecules/ListUsers';
 
-export interface props {
-  key: string;
-  imageUrl: string;
-}
-
 export const FollowUsersScreen = () => {
   const [searchUser, setSearchUser] = useState('');
 
