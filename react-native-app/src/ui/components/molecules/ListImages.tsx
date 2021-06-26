@@ -1,102 +1,98 @@
 import React from 'react';
-import {
-  StyleSheet, View, ScrollView,
-} from 'react-native';
+import { StyleSheet, View, FlatList, Dimensions, TouchableOpacity, Image } from 'react-native';
 
-import ListImage from 'src/ui/components/atoms/ListImage';
+const ITEM_WIDTH = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
-  postList: {
+  imageList: {
     flex: 1,
+    paddingHorizontal: 1,
   },
 
-  listContainer: {
-    paddingHorizontal: 1,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+  listImage: {
+    width: ITEM_WIDTH / 3,
+    height: ITEM_WIDTH / 3,
   },
 });
 
-export default function ListImages() {
-  return (
-    <View style={styles.postList}>
-      <ScrollView>
-        <View style={styles.listContainer}>
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-          <ListImage url="https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg" />
-        </View>
-      </ScrollView>
-    </View>
-  );
+// 一覧表示用画像データ
+export interface ImageData {
+  key: string;
+  imageUrl: string;
 }
 
-// ！以下flatListで作成しようとしたらめんどくさそうなワーニング出てうまくいかないから保留！
+const imageList: ImageData[] = [
+  {
+    key: '1',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '2',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '3',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '4',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '5',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '7',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '8',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '9',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '10',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '11',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '12',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '13',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+  {
+    key: '14',
+    imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
+  },
+];
 
-// import React from 'react';
-// import {
-//   StyleSheet, TouchableOpacity, Image, View, FlatList,
-// } from 'react-native';
+export const ListImages = () => {
+  const renderItem = ({ item }: { item: ImageData }) => (
+    <View style={styles.listImage}>
+      <TouchableOpacity>
+        <Image style={styles.listImage} resizeMode="stretch" source={{ uri: item.imageUrl }} />
+      </TouchableOpacity>
+    </View>
+  );
 
-// const styles = StyleSheet.create({
-//   listImage: {
-//     width: 137,
-//     height: 137,
-//   },
-
-//   listContainer: {
-//     paddingHorizontal: 1,
-//     flexDirection: 'row',
-//     flexWrap: 'wrap',
-//   },
-// });
-
-// export default function ListImages() {
-//   type props ={
-//     imageUrl: string
-//   }
-
-//   const imageList: props[] = [
-//     {
-//       imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
-//     },
-//     {
-//       imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
-//     },
-//     {
-//       imageUrl: 'https://web.goout.jp/wp-content/uploads/2019/08/Z06_0706.jpg',
-//     },
-//   ];
-
-//   const renderItem = ({ item }) => (
-//     <TouchableOpacity>
-//       <Image
-//         style={styles.listImage}
-//         resizeMode="stretch"
-//         source={{ uri: item.imageUrl }}
-//       />
-//     </TouchableOpacity>
-//   );
-
-//   return (
-//     <View style={styles.listContainer}>
-//       <FlatList
-//         data={imageList}
-//         renderItem={renderItem}
-//       />
-//     </View>
-//   );
-// }
+  return (
+    <View style={styles.imageList}>
+      <FlatList
+        data={imageList}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.key}
+        numColumns={3}
+      />
+    </View>
+  );
+};
