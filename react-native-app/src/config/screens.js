@@ -11,3 +11,9 @@ export const FOLLOW_USERS = 'FollowUsers';
 // Auth
 export const SIGNIN = 'SignIn';
 export const SIGNUP = 'SignUp';
+
+// BottomTabs
+export const bottomTabs = {
+  home: 'HomeTab',
+  profile: 'ProfileTab',
+};
