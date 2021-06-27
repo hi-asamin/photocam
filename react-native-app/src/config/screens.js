@@ -2,6 +2,10 @@
 export const HOME = 'Home';
 export const TIMELINE = 'TimeLine';
 
+// Post
+export const POST_CREATE = 'PostCreate';
+export const POST_EDIT = 'PostEdit';
+
 // Profile
 export const PROFILE = 'Profile';
 export const PROFILE_CREATE = 'ProfileCreate';
@@ -15,5 +19,6 @@ export const SIGNUP = 'SignUp';
 // BottomTabs
 export const bottomTabs = {
   home: 'HomeTab',
+  post: 'PostTab',
   profile: 'ProfileTab',
 };

@@ -4,8 +4,8 @@ import { useNavigation } from '@react-navigation/native';
 
 import { HOME } from 'src/config/screens';
 
-export const TimeLineScreen = () => {
-  const title = 'TimeLineScreen';
+export const PostEditScreen = () => {
+  const title = '投稿編集画面';
   const { navigate } = useNavigation();
   return (
     <View>
