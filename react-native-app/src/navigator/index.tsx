@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import { HomeStack } from 'src/navigator/home';
+import { PostStack } from 'src/navigator/post';
 import { ProfileStack } from 'src/navigator/profile';
 
 import { bottomTabs } from 'src/config/screens';
@@ -20,6 +21,14 @@ export const Navigator = () => (
         options={{
           tabBarLabel: '',
           tabBarIcon: () => <MaterialCommunityIcons name="home" size={32} />,
+        }}
+      />
+      <Tab.Screen
+        name={bottomTabs.post}
+        component={PostStack}
+        options={{
+          tabBarLabel: '',
+          tabBarIcon: () => <MaterialCommunityIcons name="plus-circle-outline" size={32} />,
         }}
       />
       <Tab.Screen
