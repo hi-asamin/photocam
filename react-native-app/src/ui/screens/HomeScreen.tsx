@@ -4,12 +4,13 @@ import { useNavigation } from '@react-navigation/native';
 
 import { TIMELINE, PROFILE, bottomTabs } from 'src/config/screens';
 
+import message from 'src/i18n/ja.json';
+
 export const HomeScreen = () => {
   const { navigate } = useNavigation();
-  const title = 'Home';
   return (
     <View>
-      <Text>{title}</Text>
+      <Text>{message.home.title}</Text>
       <Button
         title="プロフィール画面"
         onPress={() => {
