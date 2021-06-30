@@ -5,14 +5,18 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import { HomeScreen } from 'src/ui/screens/HomeScreen';
 import { TimeLineScreen } from 'src/ui/screens/TimeLine';
 
-import { HOME, TIMELINE } from 'src/config/screens';
+import { HOME, TIMELINE, topTabs } from 'src/config/screens';
 
 const Tab = createMaterialTopTabNavigator();
 function HomeTopTab() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name={HOME} component={HomeScreen} options={{ tabBarLabel: HOME }} />
-      <Tab.Screen name={TIMELINE} component={TimeLineScreen} options={{ tabBarLabel: TIMELINE }} />
+      <Tab.Screen name={HOME} component={HomeScreen} options={{ tabBarLabel: topTabs.home }} />
+      <Tab.Screen
+        name={TIMELINE}
+        component={TimeLineScreen}
+        options={{ tabBarLabel: topTabs.timeLine }}
+      />
     </Tab.Navigator>
   );
 }

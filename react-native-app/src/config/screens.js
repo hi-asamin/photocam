@@ -16,6 +16,12 @@ export const FOLLOW_USERS = 'FollowUsers';
 export const SIGNIN = 'SignIn';
 export const SIGNUP = 'SignUp';
 
+// TopTabs
+export const topTabs = {
+  home: 'ホーム',
+  timeLine: 'タイムライン',
+};
+
 // BottomTabs
 export const bottomTabs = {
   home: 'HomeTab',
