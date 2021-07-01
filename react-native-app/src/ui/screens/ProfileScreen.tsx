@@ -8,7 +8,7 @@ import { ListImages } from 'src/ui/components/molecules/ListImages';
 import { FOLLOW_USERS, PROFILE_EDIT } from 'src/config/screens';
 import { useNavigation } from '@react-navigation/native';
 
-import message from 'src/i18n/ja.json';
+import constant from 'src/i18n/ja.json';
 
 // テスト用画像データ
 const backImages = [{ uri: 'https://www.bepal.net/wp-content/uploads/2020/07/IMG_9902.jpg' }];
@@ -51,7 +51,7 @@ export const ProfileScreen = () => {
             <Text style={styles.userName}>永野 芽郁</Text>
             <Text style={styles.userId}>@test</Text>
             <Text>神奈川県横浜市</Text>
-            <Text style={styles.followYes}>{message.profile.label.followed}</Text>
+            <Text style={styles.followYes}>{constant.message.followed}</Text>
           </View>
 
           <View>
@@ -62,21 +62,21 @@ export const ProfileScreen = () => {
                   navigate(PROFILE_EDIT);
                 }}
               >
-                <Text style={styles.buttonLabel}>{message.profile.button.edit}</Text>
+                <Text style={styles.buttonLabel}>{constant.button.edit}</Text>
               </TouchableOpacity>
             </View>
             {/* <View style={styles.profileButton}>
               <TouchableOpacity style={styles.buttonContainer}>
-                <Text style={styles.buttonLabel}>フォロー中</Text>
+                <Text style={styles.buttonLabel}>{constant.button.following}</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.buttonContainer}>
-                <Text style={styles.buttonLabel}>メッセージ</Text>
+                <Text style={styles.buttonLabel}>{constant.button.message}</Text>
               </TouchableOpacity>
             </View> */}
             <View style={styles.countContainer}>
               <TouchableOpacity style={styles.counter}>
                 <Text style={styles.countNum}>999999</Text>
-                <Text style={styles.countLabel}>{message.profile.button.posts}</Text>
+                <Text style={styles.countLabel}>{constant.button.posts}</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.counter}
@@ -85,7 +85,7 @@ export const ProfileScreen = () => {
                 }}
               >
                 <Text style={styles.countNum}>999999</Text>
-                <Text style={styles.countLabel}>{message.profile.button.following}</Text>
+                <Text style={styles.countLabel}>{constant.button.following}</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.counter}
@@ -94,7 +94,7 @@ export const ProfileScreen = () => {
                 }}
               >
                 <Text style={styles.countNum}>999999</Text>
-                <Text style={styles.countLabel}>{message.profile.button.follower}</Text>
+                <Text style={styles.countLabel}>{constant.button.follower}</Text>
               </TouchableOpacity>
             </View>
           </View>

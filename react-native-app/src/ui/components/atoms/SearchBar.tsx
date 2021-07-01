@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, View, TextInput } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
+import constant from 'src/i18n/ja.json';
+
 // 親のstateを変更する
 export interface Props {
   searchText: string;
@@ -22,7 +24,7 @@ export const SearchBar = (props: Props) => {
           onChangeText={(text) => {
             setSearchText(text);
           }}
-          placeholder="検索"
+          placeholder={constant.label.search}
           keyboardType="default"
           returnKeyType="done"
         />
