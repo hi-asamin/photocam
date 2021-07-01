@@ -55,6 +55,11 @@ const styles = StyleSheet.create({
   },
 });
 
+// 表示するユーザー
+export interface Props {
+  userType: string;
+}
+
 // 一覧表示用データ
 export interface ListUser {
   key: string;
@@ -65,13 +70,106 @@ export interface ListUser {
   imageUrl: string;
 }
 
-const userList: ListUser[] = [
+const followerList: ListUser[] = [
+  {
+    key: '1',
+    userName: '朝倉 未来',
+    userId: '@mikuru_asakura',
+    userArea: 'nagoya',
+    followFlg: false,
+    imageUrl:
+      'https://risshikaikan.jp/wp-content/uploads/2021/01/47137720-61A0-4437-8D80-705CE77154C1.jpeg',
+  },
+  {
+    key: '2',
+    userName: '朝倉 未来',
+    userId: '@mikuru_asakura',
+    userArea: 'nagoya',
+    followFlg: false,
+    imageUrl:
+      'https://risshikaikan.jp/wp-content/uploads/2021/01/47137720-61A0-4437-8D80-705CE77154C1.jpeg',
+  },
+  {
+    key: '3',
+    userName: '朝倉 未来',
+    userId: '@mikuru_asakura',
+    userArea: 'nagoya',
+    followFlg: false,
+    imageUrl:
+      'https://risshikaikan.jp/wp-content/uploads/2021/01/47137720-61A0-4437-8D80-705CE77154C1.jpeg',
+  },
+  {
+    key: '4',
+    userName: '朝倉 未来',
+    userId: '@mikuru_asakura',
+    userArea: 'nagoya',
+    followFlg: false,
+    imageUrl:
+      'https://risshikaikan.jp/wp-content/uploads/2021/01/47137720-61A0-4437-8D80-705CE77154C1.jpeg',
+  },
+  {
+    key: '5',
+    userName: '朝倉 未来',
+    userId: '@mikuru_asakura',
+    userArea: 'nagoya',
+    followFlg: false,
+    imageUrl:
+      'https://risshikaikan.jp/wp-content/uploads/2021/01/47137720-61A0-4437-8D80-705CE77154C1.jpeg',
+  },
+  {
+    key: '6',
+    userName: '朝倉 未来',
+    userId: '@mikuru_asakura',
+    userArea: 'nagoya',
+    followFlg: false,
+    imageUrl:
+      'https://risshikaikan.jp/wp-content/uploads/2021/01/47137720-61A0-4437-8D80-705CE77154C1.jpeg',
+  },
+  {
+    key: '7',
+    userName: '朝倉 未来',
+    userId: '@mikuru_asakura',
+    userArea: 'nagoya',
+    followFlg: false,
+    imageUrl:
+      'https://risshikaikan.jp/wp-content/uploads/2021/01/47137720-61A0-4437-8D80-705CE77154C1.jpeg',
+  },
+  {
+    key: '8',
+    userName: '朝倉 未来',
+    userId: '@mikuru_asakura',
+    userArea: 'nagoya',
+    followFlg: false,
+    imageUrl:
+      'https://risshikaikan.jp/wp-content/uploads/2021/01/47137720-61A0-4437-8D80-705CE77154C1.jpeg',
+  },
+  {
+    key: '9',
+    userName: '朝倉 未来',
+    userId: '@mikuru_asakura',
+    userArea: 'nagoya',
+    followFlg: false,
+    imageUrl:
+      'https://risshikaikan.jp/wp-content/uploads/2021/01/47137720-61A0-4437-8D80-705CE77154C1.jpeg',
+  },
+  {
+    key: '10',
+    userName: '朝倉 未来',
+    userId: '@mikuru_asakura',
+    userArea: 'nagoya',
+    followFlg: false,
+    imageUrl:
+      'https://risshikaikan.jp/wp-content/uploads/2021/01/47137720-61A0-4437-8D80-705CE77154C1.jpeg',
+  },
+];
+
+const followList: ListUser[] = [
   {
     key: '1',
     userName: '永野 芽衣',
     userId: '@mei_nagano',
     userArea: 'tokyo',
-    followFlg: false,
+    followFlg: true,
     imageUrl: 'https://i.pinimg.com/736x/10/90/b9/1090b93f4ddc26c5dbafb69c376d99ca.jpg',
   },
   {
@@ -148,7 +246,8 @@ const userList: ListUser[] = [
   },
 ];
 
-export const ListUsers = () => {
+export const ListUsers = (props: Props) => {
+  const { userType } = props;
   const renderItem = ({ item }: { item: ListUser }) => (
     <TouchableOpacity style={styles.container}>
       <View style={styles.userListContainer}>
@@ -171,6 +270,10 @@ export const ListUsers = () => {
       </View>
     </TouchableOpacity>
   );
+
+  // 表示するユーザー情報
+  // 暫定対応
+  const userList = userType === 'follower' ? followerList : followList;
 
   if (!userList) {
     // 保留：表示対象が存在しない場合は検討してから実装
