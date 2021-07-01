@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
 
 // 表示するユーザー
 export interface Props {
-  userType: string;
+  isFollower: boolean;
 }
 
 // 一覧表示用データ
@@ -247,7 +247,7 @@ const followList: ListUser[] = [
 ];
 
 export const ListUsers = (props: Props) => {
-  const { userType } = props;
+  const { isFollower } = props;
   const renderItem = ({ item }: { item: ListUser }) => (
     <TouchableOpacity style={styles.container}>
       <View style={styles.userListContainer}>
@@ -273,7 +273,7 @@ export const ListUsers = (props: Props) => {
 
   // 表示するユーザー情報
   // 暫定対応
-  const userList = userType === 'follower' ? followerList : followList;
+  const userList = isFollower ? followerList : followList;
 
   if (!userList) {
     // 保留：表示対象が存在しない場合は検討してから実装
