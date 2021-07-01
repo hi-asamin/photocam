@@ -37,15 +37,15 @@ const styles = StyleSheet.create({
 
 // ボタン切り替えデータ
 export interface Props {
-  followFlg: boolean;
+  isFollow: boolean;
 }
 
 export const SwitchButton = (props: Props) => {
-  const { followFlg } = props;
+  const { isFollow } = props;
   return (
     <View>
       <TouchableOpacity>
-        {followFlg ? (
+        {isFollow ? (
           <View style={styles.buttonFollowContainer}>
             <Text style={styles.buttonFollowLabel}>フォロー</Text>
           </View>
