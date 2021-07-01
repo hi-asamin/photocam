@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/Feather';
 
 import { ListImages } from 'src/ui/components/molecules/ListImages';
 import { FOLLOW_USERS, PROFILE_EDIT } from 'src/config/screens';
+import { useNavigation } from '@react-navigation/native';
 
 import message from 'src/i18n/ja.json';
 
@@ -15,8 +16,8 @@ const profileImages = [
   { uri: 'https://your-magazine.net/wp-content/uploads/2018/02/naganomei-35-a.jpg' },
 ];
 
-export const ProfileScreen = (props) => {
-  const { navigation } = props;
+export const ProfileScreen = () => {
+  const { navigate } = useNavigation();
   const [backVisible, setIsBackVisible] = useState(false);
   const [profileVisible, setIsProfileVisible] = useState(false);
 
@@ -58,7 +59,7 @@ export const ProfileScreen = (props) => {
               <TouchableOpacity
                 style={styles.buttonContainer}
                 onPress={() => {
-                  navigation.navigate(PROFILE_EDIT);
+                  navigate(PROFILE_EDIT);
                 }}
               >
                 <Text style={styles.buttonLabel}>{message.profile.button.edit}</Text>
@@ -80,7 +81,7 @@ export const ProfileScreen = (props) => {
               <TouchableOpacity
                 style={styles.counter}
                 onPress={() => {
-                  navigation.navigate(FOLLOW_USERS);
+                  navigate(FOLLOW_USERS);
                 }}
               >
                 <Text style={styles.countNum}>999999</Text>
@@ -89,7 +90,7 @@ export const ProfileScreen = (props) => {
               <TouchableOpacity
                 style={styles.counter}
                 onPress={() => {
-                  navigation.navigate(FOLLOW_USERS);
+                  navigate(FOLLOW_USERS);
                 }}
               >
                 <Text style={styles.countNum}>999999</Text>

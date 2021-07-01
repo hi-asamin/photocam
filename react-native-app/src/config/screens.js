@@ -20,6 +20,8 @@ export const SIGNUP = 'SignUp';
 export const topTabs = {
   home: 'ホーム',
   timeLine: 'タイムライン',
+  follower: 'フォロワー',
+  following: 'フォロー中',
 };
 
 // BottomTabs
