@@ -7,6 +7,8 @@ import Icon from 'react-native-vector-icons/Feather';
 import { ListImages } from 'src/ui/components/molecules/ListImages';
 import { FOLLOW_USERS, PROFILE_EDIT } from 'src/config/screens';
 
+import message from 'src/i18n/ja.json';
+
 // テスト用画像データ
 const backImages = [{ uri: 'https://www.bepal.net/wp-content/uploads/2020/07/IMG_9902.jpg' }];
 const profileImages = [
@@ -48,7 +50,7 @@ export const ProfileScreen = (props) => {
             <Text style={styles.userName}>永野 芽郁</Text>
             <Text style={styles.userId}>@test</Text>
             <Text>神奈川県横浜市</Text>
-            <Text style={styles.followYes}>フォローされています</Text>
+            <Text style={styles.followYes}>{message.profile.label.followed}</Text>
           </View>
 
           <View>
@@ -59,7 +61,7 @@ export const ProfileScreen = (props) => {
                   navigation.navigate(PROFILE_EDIT);
                 }}
               >
-                <Text style={styles.buttonLabel}>プロフィール編集</Text>
+                <Text style={styles.buttonLabel}>{message.profile.button.edit}</Text>
               </TouchableOpacity>
             </View>
             {/* <View style={styles.profileButton}>
@@ -73,7 +75,7 @@ export const ProfileScreen = (props) => {
             <View style={styles.countContainer}>
               <TouchableOpacity style={styles.counter}>
                 <Text style={styles.countNum}>999999</Text>
-                <Text style={styles.countLabel}>投稿</Text>
+                <Text style={styles.countLabel}>{message.profile.button.posts}</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.counter}
@@ -82,7 +84,7 @@ export const ProfileScreen = (props) => {
                 }}
               >
                 <Text style={styles.countNum}>999999</Text>
-                <Text style={styles.countLabel}>フォロー中</Text>
+                <Text style={styles.countLabel}>{message.profile.button.following}</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.counter}
@@ -91,7 +93,7 @@ export const ProfileScreen = (props) => {
                 }}
               >
                 <Text style={styles.countNum}>999999</Text>
-                <Text style={styles.countLabel}>フォロワー</Text>
+                <Text style={styles.countLabel}>{message.profile.button.follower}</Text>
               </TouchableOpacity>
             </View>
           </View>
