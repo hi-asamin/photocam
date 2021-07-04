@@ -62,7 +62,7 @@ export const ProfileScreen = () => {
                   navigate(PROFILE_EDIT);
                 }}
               >
-                <Text style={styles.buttonLabel}>{constant.button.edit}</Text>
+                <Text style={styles.buttonLabel}>{constant.button.profileEdit}</Text>
               </TouchableOpacity>
             </View>
             {/* <View style={styles.profileButton}>
