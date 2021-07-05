@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, ScrollView, FlatList, Text } from 'react-native';
+import { StyleSheet, View, FlatList, Text } from 'react-native';
 // import { useNavigation } from '@react-navigation/native';
 
 import { ListImages } from 'src/ui/components/molecules/ListImages';
@@ -14,7 +14,7 @@ export const HomeScreen = () => {
     </View>
   );
   return (
-    <ScrollView>
+    <View style={styles.container}>
       <View style={styles.trendContainer}>
         <Text style={styles.trendTitle}>{constant.label.trend}</Text>
         <View style={styles.trendImageList}>
@@ -29,11 +29,14 @@ export const HomeScreen = () => {
       <View style={styles.imageListContainer}>
         <ListImages />
       </View>
-    </ScrollView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   trendContainer: {
     flex: 1,
     paddingHorizontal: 7,
@@ -41,7 +44,7 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   imageListContainer: {
-    flex: 1,
+    flex: 2,
   },
   trendImageList: {
     alignItems: 'center',
