@@ -21,7 +21,7 @@ export const UserImage = (props: Props) => {
   const { imageUrl, style } = props;
   return (
     <View>
-      <Image style={[styles.userImage, style]} resizeMode="stretch" source={{ uri: imageUrl }} />
+      <Image style={[styles.userImage, style]} resizeMode="cover" source={{ uri: imageUrl }} />
     </View>
   );
 };
