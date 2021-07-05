@@ -4,6 +4,23 @@ import { useNavigation } from '@react-navigation/native';
 
 import { HOME } from 'src/config/screens';
 
+// navigate 例
+// {
+/* <Button
+    title="プロフィール画面"
+    onPress={() => {
+    navigate(bottomTabs.profile, { screen: PROFILE });
+    }}
+  />
+   <Button
+      title="タイムライン画面"
+      onPress={() => {
+      navigate(TIMELINE);
+      }}
+    />
+  */
+// }
+
 export const PostCreateScreen = () => {
   const title = '新規投稿画面';
   const { navigate } = useNavigation();

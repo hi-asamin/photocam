@@ -1,6 +1,9 @@
 import React from 'react';
 import { StyleSheet, View, FlatList, Dimensions, TouchableOpacity, Image } from 'react-native';
 
+import { useNavigation } from '@react-navigation/native';
+import { POST_DETAIL } from 'src/config/screens';
+
 const ITEM_WIDTH = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
@@ -77,9 +80,14 @@ const imageList: ImageData[] = [
 ];
 
 export const ListImages = () => {
+  const { navigate } = useNavigation();
   const renderItem = ({ item }: { item: ImageData }) => (
     <View style={styles.listImage}>
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          navigate(POST_DETAIL);
+        }}
+      >
         <Image style={styles.listImage} resizeMode="stretch" source={{ uri: item.imageUrl }} />
       </TouchableOpacity>
     </View>
