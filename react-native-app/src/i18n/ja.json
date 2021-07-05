@@ -1,46 +1,40 @@
 {
-  "home": {
-    "title": "home"
+  "message": {
+    "followed": "フォローされています",
+    "select": "選択して下さい",
+    "introduction": "プロフィールを入力しましょう！150文字まで入力できます。"
   },
-  "profile": {
-    "label": {
-      "followed": "フォローされています"
-    },
-    "button": {
-      "edit": "プロフィール編集",
-      "posts": "投稿",
-      "following": "フォロー中",
-      "follower": "フォロワー"
-    },
-    "edit": {
-      "label": {
-        "id": "ID",
-        "name": "名前",
-        "area": "エリア",
-        "prefectures": "都道府県",
-        "introduction": "プロフィール文"
-      },
-      "placeholder": {
-        "area": "選択して下さい",
-        "prefectures": "選択して下さい",
-        "introduction": "プロフィールを入力しましょう！150文字まで入力できます。"
-      },
-      "sns": {
-        "title": "SNS",
-        "yutube": "YouTube",
-        "twitter": "Twitter",
-        "instagram": "Instagram",
-        "facebook": "Facebook",
-        "web": "Web"
-      }
-    }
+  "button": {
+    "profileEdit": "プロフィール編集",
+    "posts": "投稿",
+    "following": "フォロー中",
+    "follower": "フォロワー",
+    "follow": "フォローする",
+    "message": "メッセージ",
+    "delete": "削除する",
+    "edit": "編集",
+    "linkCopy": "リンクをコピー",
+    "cancel": "キャンセル"
   },
-  "auth": {
-    "signIn": {
-      "title": "Sign In"
-    },
-    "signUp": {
-      "title": "Sign Up"
-    }
-  }
+  "label": {
+    "id": "ID",
+    "name": "名前",
+    "area": "エリア",
+    "prefectures": "都道府県",
+    "introduction": "プロフィール文",
+    "yutube": "YouTube",
+    "twitter": "Twitter",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "web": "Web",
+    "trend": "トレンド",
+    "search": "検索",
+    "nice": "いいね：",
+    "comment": "コメント："
+  },
+  "title": {
+    "snsTitle": "SNS",
+    "signInTitle": "Sign In",
+    "signUpTitle": "Sign Up"
+   }
 }

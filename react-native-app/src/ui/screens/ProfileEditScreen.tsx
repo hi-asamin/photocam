@@ -12,7 +12,7 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 import RNPickerSelect from 'react-native-picker-select';
 
-import message from 'src/i18n/ja.json';
+import constant from 'src/i18n/ja.json';
 
 // テスト用画像データ
 const backImages = [{ uri: 'https://www.bepal.net/wp-content/uploads/2020/07/IMG_9902.jpg' }];
@@ -94,7 +94,7 @@ export const ProfileEditScreen = () => {
       >
         <ScrollView style={styles.editUserProfile}>
           <View style={styles.editContainer}>
-            <Text style={styles.text}>{message.profile.edit.label.name}</Text>
+            <Text style={styles.text}>{constant.label.name}</Text>
             <TextInput
               style={styles.inputtext}
               value={userName}
@@ -107,7 +107,7 @@ export const ProfileEditScreen = () => {
             />
           </View>
           <View style={styles.editContainer}>
-            <Text style={styles.text}>{message.profile.edit.label.id}</Text>
+            <Text style={styles.text}>{constant.label.id}</Text>
             <TextInput
               style={styles.inputtext}
               value={userId}
@@ -121,12 +121,12 @@ export const ProfileEditScreen = () => {
           </View>
           <View style={styles.editAreaContainer}>
             <View style={styles.editArea}>
-              <Text style={styles.text}>{message.profile.edit.label.area}</Text>
+              <Text style={styles.text}>{constant.label.area}</Text>
               <RNPickerSelect
                 onValueChange={(value) => setArea(value)}
                 items={areaList}
                 style={pickerSelectStyles}
-                placeholder={{ label: '選択してください', value: '' }}
+                placeholder={{ label: constant.message.select, value: '' }}
                 Icon={() => (
                   <Icon name="chevron-down" size={15} color="gray" style={styles.pickerIcon} />
                 )}
@@ -134,12 +134,12 @@ export const ProfileEditScreen = () => {
               />
             </View>
             <View style={styles.editArea}>
-              <Text style={styles.text}>{message.profile.edit.label.prefectures}</Text>
+              <Text style={styles.text}>{constant.label.prefectures}</Text>
               <RNPickerSelect
                 onValueChange={(value) => setArea(value)}
                 items={prefecturesList}
                 style={pickerSelectStyles}
-                placeholder={{ label: '選択してください', value: '' }}
+                placeholder={{ label: constant.message.select, value: '' }}
                 Icon={() => (
                   <Icon name="chevron-down" size={15} color="gray" style={styles.pickerIcon} />
                 )}
@@ -148,7 +148,7 @@ export const ProfileEditScreen = () => {
             </View>
           </View>
           <View style={styles.editProfileContainer}>
-            <Text style={styles.text}>{message.profile.edit.label.introduction}</Text>
+            <Text style={styles.text}>{constant.label.introduction}</Text>
             <TextInput
               multiline
               style={styles.inputProfiletext}
@@ -163,9 +163,9 @@ export const ProfileEditScreen = () => {
             />
           </View>
           <View style={styles.editSnsContainer}>
-            <Text style={styles.text}>{message.profile.edit.sns.title}</Text>
+            <Text style={styles.text}>{constant.title.snsTitle}</Text>
             <View style={styles.editSns}>
-              <Text style={styles.snsText}>{message.profile.edit.sns.yutube}</Text>
+              <Text style={styles.snsText}>{constant.label.yutube}</Text>
               <TextInput
                 style={styles.inputSnstext}
                 value={userYouTube}
@@ -178,7 +178,7 @@ export const ProfileEditScreen = () => {
               />
             </View>
             <View style={styles.editSns}>
-              <Text style={styles.snsText}>{message.profile.edit.sns.twitter}</Text>
+              <Text style={styles.snsText}>{constant.label.twitter}</Text>
               <TextInput
                 style={styles.inputSnstext}
                 value={userTwitter}
@@ -191,7 +191,7 @@ export const ProfileEditScreen = () => {
               />
             </View>
             <View style={styles.editSns}>
-              <Text style={styles.snsText}>{message.profile.edit.sns.instagram}</Text>
+              <Text style={styles.snsText}>{constant.label.instagram}</Text>
               <TextInput
                 style={styles.inputSnstext}
                 value={userInstagram}
@@ -204,7 +204,7 @@ export const ProfileEditScreen = () => {
               />
             </View>
             <View style={styles.editSns}>
-              <Text style={styles.snsText}>{message.profile.edit.sns.facebook}</Text>
+              <Text style={styles.snsText}>{constant.label.facebook}</Text>
               <TextInput
                 style={styles.inputSnstext}
                 value={userFaceBook}
@@ -217,7 +217,7 @@ export const ProfileEditScreen = () => {
               />
             </View>
             <View style={styles.editSns}>
-              <Text style={styles.snsText}>{message.profile.edit.sns.web}</Text>
+              <Text style={styles.snsText}>{constant.label.web}</Text>
               <TextInput
                 style={styles.inputSnstext}
                 value={userWeb}

@@ -1,6 +1,32 @@
 import React from 'react';
 import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 
+import constant from 'src/i18n/ja.json';
+
+// ボタン切り替えデータ
+export interface Props {
+  isFollow: boolean;
+}
+
+export const SwitchButton = (props: Props) => {
+  const { isFollow } = props;
+  return (
+    <View>
+      <TouchableOpacity>
+        {isFollow ? (
+          <View style={styles.buttonFollowContainer}>
+            <Text style={styles.buttonFollowLabel}>{constant.button.following}</Text>
+          </View>
+        ) : (
+          <View style={styles.buttonUnFollowContainer}>
+            <Text style={styles.buttonUnFollowLabel}>{constant.button.follow}</Text>
+          </View>
+        )}
+      </TouchableOpacity>
+    </View>
+  );
+};
+
 const styles = StyleSheet.create({
   buttonFollowContainer: {
     backgroundColor: '#467FD3',
@@ -34,27 +60,3 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
 });
-
-// ボタン切り替えデータ
-export interface Props {
-  isFollow: boolean;
-}
-
-export const SwitchButton = (props: Props) => {
-  const { isFollow } = props;
-  return (
-    <View>
-      <TouchableOpacity>
-        {isFollow ? (
-          <View style={styles.buttonFollowContainer}>
-            <Text style={styles.buttonFollowLabel}>フォロー</Text>
-          </View>
-        ) : (
-          <View style={styles.buttonUnFollowContainer}>
-            <Text style={styles.buttonUnFollowLabel}>フォローする</Text>
-          </View>
-        )}
-      </TouchableOpacity>
-    </View>
-  );
-};
