@@ -7,6 +7,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { HomeStack } from 'src/navigator/home';
 import { PostStack } from 'src/navigator/post';
 import { ProfileStack } from 'src/navigator/profile';
+import { NoticeStack } from 'src/navigator/notice';
 
 import { bottomTabs } from 'src/config/screens';
 
@@ -29,6 +30,14 @@ export const Navigator = () => (
         options={{
           tabBarLabel: '',
           tabBarIcon: () => <MaterialCommunityIcons name="plus-circle-outline" size={32} />,
+        }}
+      />
+      <Tab.Screen
+        name={bottomTabs.notice}
+        component={NoticeStack}
+        options={{
+          tabBarLabel: '',
+          tabBarIcon: () => <MaterialCommunityIcons name="bell" size={32} />,
         }}
       />
       <Tab.Screen

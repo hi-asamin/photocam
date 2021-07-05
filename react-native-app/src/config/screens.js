@@ -1,6 +1,7 @@
 // Home
 export const HOME = 'Home';
 export const TIMELINE = 'TimeLine';
+export const CHAT_LIST = 'ChatList';
 
 // Post
 export const POST_CREATE = 'PostCreate';
@@ -13,6 +14,9 @@ export const PROFILE = 'Profile';
 export const PROFILE_CREATE = 'ProfileCreate';
 export const PROFILE_EDIT = 'ProfileEdit';
 export const FOLLOW_USERS = 'FollowUsers';
+
+// Notice
+export const NOTICE_HOME = 'NoticeHome';
 
 // Auth
 export const SIGNIN = 'SignIn';
@@ -31,4 +35,5 @@ export const bottomTabs = {
   home: 'HomeTab',
   post: 'PostTab',
   profile: 'ProfileTab',
+  notice: 'NoticeTab',
 };
