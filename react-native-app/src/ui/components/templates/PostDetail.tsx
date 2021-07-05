@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 5,
-    paddingVertical: 5,
+    paddingTop: 5,
   },
   userInfo: {
     paddingLeft: 5,
