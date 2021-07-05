@@ -8,16 +8,17 @@ import Modal from 'react-native-modal';
 import { PostMenuModal } from 'src/ui/components/molecules/PostMenuModal';
 import { UserImage } from 'src/ui/components/atoms/UserImage';
 import { TextButton } from 'src/ui/components/atoms/TextButton';
-// import { useNavigation } from '@react-navigation/native';
-
-import constant from 'src/i18n/ja.json';
+import { LIKE_USERS } from 'src/config/screens';
+import { useNavigation } from '@react-navigation/native';
 import { Post } from 'src/domain/models/post';
+import constant from 'src/i18n/ja.json';
 
 export interface Props {
   postList: Post;
 }
 
 export const PostDetail = (props: Props) => {
+  const { navigate } = useNavigation();
   const { postList } = props;
   const [iconStatus, setIconStatus] = useState(false);
   const [menuModalIsVisible, setMenuModalIsVisible] = useState(false);
@@ -88,7 +89,12 @@ export const PostDetail = (props: Props) => {
           </View>
         </View>
         <View style={styles.reactionContainer}>
-          <TouchableOpacity style={styles.reaction}>
+          <TouchableOpacity
+            style={styles.reaction}
+            onPress={() => {
+              navigate(LIKE_USERS);
+            }}
+          >
             <Text style={styles.reactionText}>
               {constant.label.nice}
               {postList.niceCount}

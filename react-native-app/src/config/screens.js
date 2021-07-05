@@ -6,6 +6,7 @@ export const TIMELINE = 'TimeLine';
 export const POST_CREATE = 'PostCreate';
 export const POST_EDIT = 'PostEdit';
 export const POST_DETAIL = 'PostDetail';
+export const LIKE_USERS = 'LikeUsers';
 
 // Profile
 export const PROFILE = 'Profile';
