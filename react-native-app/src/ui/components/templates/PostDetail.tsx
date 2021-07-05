@@ -11,7 +11,7 @@ import { TextButton } from 'src/ui/components/atoms/TextButton';
 // import { useNavigation } from '@react-navigation/native';
 
 import constant from 'src/i18n/ja.json';
-import { Post } from '@src/domain/models/post';
+import { Post } from 'src/domain/models/post';
 
 export interface Props {
   postList: Post;
