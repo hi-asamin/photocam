@@ -4,8 +4,9 @@ import { useNavigation } from '@react-navigation/native';
 
 import { HOME } from 'src/config/screens';
 
-{
-  /* <Button
+// navigate 例
+// {
+/* <Button
     title="プロフィール画面"
     onPress={() => {
     navigate(bottomTabs.profile, { screen: PROFILE });
@@ -18,7 +19,7 @@ import { HOME } from 'src/config/screens';
       }}
     />
   */
-}
+// }
 
 export const PostCreateScreen = () => {
   const title = '新規投稿画面';
