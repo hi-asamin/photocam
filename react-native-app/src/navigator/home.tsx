@@ -10,8 +10,17 @@ import { TimeLineScreen } from 'src/ui/screens/TimeLine';
 import { PostDetailScreen } from 'src/ui/screens/PostDetailScreen';
 import { LikeUsersScreen } from 'src/ui/screens/LikeUsersScreen';
 import { ChatListScreen } from 'src/ui/screens/ChatListScreen';
+import { ChatDetailScreen } from 'src/ui/screens/ChatDetailScreen';
 
-import { HOME, TIMELINE, topTabs, POST_DETAIL, LIKE_USERS, CHAT_LIST } from 'src/config/screens';
+import {
+  HOME,
+  TIMELINE,
+  topTabs,
+  POST_DETAIL,
+  LIKE_USERS,
+  CHAT_LIST,
+  CHAT_DETAIL,
+} from 'src/config/screens';
 
 const Tab = createMaterialTopTabNavigator();
 function HomeTopTab() {
@@ -51,6 +60,7 @@ export const HomeStack = () => {
       <Stack.Screen name={POST_DETAIL} component={PostDetailScreen} />
       <Stack.Screen name={LIKE_USERS} component={LikeUsersScreen} />
       <Stack.Screen name={CHAT_LIST} component={ChatListScreen} />
+      <Stack.Screen name={CHAT_DETAIL} component={ChatDetailScreen} />
     </Stack.Navigator>
   );
 };

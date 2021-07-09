@@ -2,6 +2,7 @@
 export const HOME = 'Home';
 export const TIMELINE = 'TimeLine';
 export const CHAT_LIST = 'ChatList';
+export const CHAT_DETAIL = 'ChatDetail';
 
 // Post
 export const POST_CREATE = 'PostCreate';
