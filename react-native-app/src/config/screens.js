@@ -18,6 +18,8 @@ export const FOLLOW_USERS = 'FollowUsers';
 
 // Notice
 export const NOTICE_HOME = 'NoticeHome';
+export const LIKE_LIST = 'LikeList';
+export const COMMENT_LIST = 'CommentList';
 
 // Auth
 export const SIGNIN = 'SignIn';
@@ -29,6 +31,9 @@ export const topTabs = {
   timeLine: 'タイムライン',
   follower: 'フォロワー',
   following: 'フォロー中',
+  notice: '公式',
+  like: 'いいね',
+  comment: 'コメント',
 };
 
 // BottomTabs
