@@ -3,6 +3,8 @@ export const HOME = 'Home';
 export const TIMELINE = 'TimeLine';
 export const CHAT_LIST = 'ChatList';
 export const CHAT_DETAIL = 'ChatDetail';
+export const CAMPING_FOOD = 'CampingFood';
+export const CAMPING_FOOD_DETAIL = 'CampingFoodDetail';
 
 // Post
 export const POST_CREATE = 'PostCreate';
@@ -38,6 +40,7 @@ export const topTabs = {
   notice: '公式',
   like: 'いいね',
   comment: 'コメント',
+  campingFood: 'キャンプ飯',
 };
 
 // BottomTabs
