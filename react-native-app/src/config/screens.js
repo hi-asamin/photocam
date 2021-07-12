@@ -18,8 +18,12 @@ export const FOLLOW_USERS = 'FollowUsers';
 
 // Notice
 export const NOTICE_HOME = 'NoticeHome';
+export const NOTICE_DETAIL = 'NoticeDetail';
 export const LIKE_LIST = 'LikeList';
 export const COMMENT_LIST = 'CommentList';
+
+// Search
+export const SEARCH = 'Search';
 
 // Auth
 export const SIGNIN = 'SignIn';
@@ -42,4 +46,5 @@ export const bottomTabs = {
   post: 'PostTab',
   profile: 'ProfileTab',
   notice: 'NoticeTab',
+  search: 'SearchTab',
 };

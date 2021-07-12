@@ -3,10 +3,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 import { NoticeHomeScreen } from 'src/ui/screens/NoticeHomeScreen';
+import { NoticeDetailScreen } from 'src/ui/screens/NoticeDetailScreen';
 import { LikeListScreen } from 'src/ui/screens/LikeListScreen';
 import { CommentListScreen } from 'src/ui/screens/CommentListScreen';
 
-import { topTabs, NOTICE_HOME, LIKE_LIST, COMMENT_LIST } from 'src/config/screens';
+import { topTabs, NOTICE_HOME, LIKE_LIST, COMMENT_LIST, NOTICE_DETAIL } from 'src/config/screens';
 
 const Tab = createMaterialTopTabNavigator();
 function NoticeTopTab() {
@@ -36,6 +37,7 @@ export const NoticeStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen name={NOTICE_HOME} component={NoticeTopTab} />
+      <Stack.Screen name={NOTICE_DETAIL} component={NoticeDetailScreen} />
       <Stack.Screen name={LIKE_LIST} component={LikeListScreen} />
       <Stack.Screen name={COMMENT_LIST} component={CommentListScreen} />
     </Stack.Navigator>
