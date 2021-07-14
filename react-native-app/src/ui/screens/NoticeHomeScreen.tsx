@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: '#E1E6E6',
     paddingVertical: 5,
+    backgroundColor: '#FFFFFF',
   },
 
   NoticeInfo: {

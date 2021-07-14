@@ -40,6 +40,7 @@ export const NoticeDetailScreen = (props: any) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#FFFFFF',
   },
   noticeHeader: {
     borderBottomWidth: 1,
