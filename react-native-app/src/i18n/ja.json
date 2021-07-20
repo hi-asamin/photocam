@@ -29,8 +29,19 @@
     "web": "Web",
     "trend": "トレンド",
     "search": "検索",
+    "searchHistory":"検索履歴",
     "nice": "いいね：",
-    "comment": "コメント："
+    "comment": "コメント：",
+    "popularPost":"人気の投稿",
+    "popularFood":"人気のキャンプ飯",
+    "genre":"ジャンル",
+    "material":"材料",
+    "dot":"・",
+    "howToMake": "作り方",
+    "step": "ステップ",
+    "point": "コツ・ポイント",
+    "postUser": "投稿したユーザー",
+    "recommendedPost": "おすすめの投稿"
   },
   "title": {
     "snsTitle": "SNS",
