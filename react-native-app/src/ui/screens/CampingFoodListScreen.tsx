@@ -9,7 +9,10 @@ export const CampingFoodListScreen = (props: any) => {
   const { item } = route.params;
 
   // 選択したジャンルの一覧のみを取得
-  const selectFoodList: Food[] = foodList.filter((food) => food.genru === item.genru);
+  // ジャンルが'new'（新着）の場合全件表示
+  // eslint-disable-next-line operator-linebreak
+  const selectFoodList: Food[] =
+    item.genru === 'new' ? foodList : foodList.filter((food) => food.genru === item.genru);
   return (
     <View style={styles.container}>
       <View style={styles.titleContainer}>

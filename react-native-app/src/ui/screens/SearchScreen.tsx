@@ -5,6 +5,10 @@ import Icon from 'react-native-vector-icons/Feather';
 import { ListImages } from 'src/ui/components/molecules/ListImages';
 import { SearchBar } from 'src/ui/components/atoms/SearchBar';
 
+import { postList } from 'src/domain/models/post';
+
+import constant from 'src/i18n/ja.json';
+
 // twitterは検索履歴画面を作ってるっぽい
 // とりあえず我流、表示非表示で対応
 // キーボードの非表示タイミングがイケテナイからあとで検討する。
@@ -38,14 +42,14 @@ export const SearchScreen = () => {
       {isFocus && (
         <View style={styles.historyContainer}>
           <View style={styles.titleContainer}>
-            <Text style={styles.title}>検索履歴</Text>
+            <Text style={styles.title}>{constant.label.searchHistory}</Text>
             <TouchableOpacity
               style={styles.button}
               onPress={() => {
                 setIsFocus(false);
               }}
             >
-              <Text style={styles.text}>キャンセル</Text>
+              <Text style={styles.text}>{constant.button.cancel}</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.container}>
@@ -59,8 +63,8 @@ export const SearchScreen = () => {
       )}
       {!isFocus && (
         <View style={styles.imageContainer}>
-          <Text style={styles.imageTitle}>人気の投稿</Text>
-          <ListImages />
+          <Text style={styles.imageTitle}>{constant.label.popularPost}</Text>
+          <ListImages postList={postList} />
         </View>
       )}
       <SafeAreaView />

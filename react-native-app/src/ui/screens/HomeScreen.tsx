@@ -6,6 +6,7 @@ import { ListImages } from 'src/ui/components/molecules/ListImages';
 import { TrendImage } from 'src/ui/components/atoms/TrendImage';
 
 import constant from 'src/i18n/ja.json';
+import { postList } from 'src/domain/models/post';
 
 export const HomeScreen = () => {
   const renderItem = ({ item }: { item: TrendData }) => (
@@ -27,7 +28,7 @@ export const HomeScreen = () => {
         </View>
       </View>
       <View style={styles.imageListContainer}>
-        <ListImages />
+        <ListImages postList={postList} />
       </View>
     </View>
   );

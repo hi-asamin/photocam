@@ -7,8 +7,9 @@ import IconFeather from 'react-native-vector-icons/Feather';
 
 import { HomeScreen } from 'src/ui/screens/HomeScreen';
 import { TimeLineScreen } from 'src/ui/screens/TimeLine';
-import { CampingFoodScreen } from 'src/ui/screens/CampingFood';
-import { CampingFoodDetailScreen } from 'src/ui/screens/CampingFoodDetail';
+import { CampingFoodHomeScreen } from 'src/ui/screens/CampingFoodHomeScreen';
+import { CampingFoodListScreen } from 'src/ui/screens/CampingFoodListScreen';
+import { CampingFoodDetailScreen } from 'src/ui/screens/CampingFoodDetailScreen';
 import { PostDetailScreen } from 'src/ui/screens/PostDetailScreen';
 import { LikeUsersScreen } from 'src/ui/screens/LikeUsersScreen';
 import { ChatListScreen } from 'src/ui/screens/ChatListScreen';
@@ -22,7 +23,8 @@ import {
   LIKE_USERS,
   CHAT_LIST,
   CHAT_DETAIL,
-  CAMPING_FOOD,
+  CAMPING_FOOD_HOME,
+  CAMPING_FOOD_LIST,
   CAMPING_FOOD_DETAIL,
 } from 'src/config/screens';
 
@@ -37,8 +39,8 @@ function HomeTopTab() {
         options={{ tabBarLabel: topTabs.timeLine }}
       />
       <Tab.Screen
-        name={CAMPING_FOOD}
-        component={CampingFoodScreen}
+        name={CAMPING_FOOD_HOME}
+        component={CampingFoodHomeScreen}
         options={{ tabBarLabel: topTabs.campingFood }}
       />
     </Tab.Navigator>
@@ -71,6 +73,7 @@ export const HomeStack = () => {
       <Stack.Screen name={CHAT_LIST} component={ChatListScreen} />
       <Stack.Screen name={CHAT_DETAIL} component={ChatDetailScreen} />
       <Stack.Screen name={CAMPING_FOOD_DETAIL} component={CampingFoodDetailScreen} />
+      <Stack.Screen name={CAMPING_FOOD_LIST} component={CampingFoodListScreen} />
     </Stack.Navigator>
   );
 };

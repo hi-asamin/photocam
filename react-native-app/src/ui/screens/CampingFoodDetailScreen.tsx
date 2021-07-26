@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, StyleSheet, Text, Image, Dimensions, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, Image, Dimensions } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import Swiper from 'react-native-swiper';
 
-import { UserImage } from 'src/ui/components/atoms/UserImage';
+import { UserInfo } from 'src/ui/components/molecules/UserInfo';
 import { User, userList } from 'src/domain/models/user';
 import { Food, foodList } from 'src/domain/models/food';
 import { FoodImage } from 'src/ui/components/atoms/FoodImage';
@@ -14,7 +14,8 @@ import constant from 'src/i18n/ja.json';
 export const CampingFoodDetailScreen = (props: any) => {
   const { route } = props;
   const { food } = route.params;
-  // 選択したジャンルの一覧のみを取得
+  // 選択したレシピの投稿ユーザーのみを取得する
+  // 配列1件のため変換したい
   const selectUserList: User[] = userList.filter((user) => user.userId === food.userId);
   // 表示対象以外のレシピを一覧表示する
   const otherFoodList: Food[] = foodList.filter((otherfood) => otherfood.key !== food.key);
@@ -79,22 +80,11 @@ export const CampingFoodDetailScreen = (props: any) => {
         </View>
         <View style={styles.footer}>
           <Text style={styles.subTitle}>{constant.label.postUser}</Text>
-          <View style={styles.userInfocontainer}>
-            <TouchableOpacity style={styles.userInfocontainer}>
-              <UserImage imageUrl={selectUserList[0].imageUrl} style={styles.userImage} />
-            </TouchableOpacity>
-            <View style={styles.userInfo}>
-              <Text style={styles.userName}>{selectUserList[0].userName}</Text>
-              <Text style={styles.userId}>{selectUserList[0].userId}</Text>
-            </View>
-            <TouchableOpacity style={styles.buttonContainer}>
-              <Text style={styles.buttonLabel}>{constant.button.follow}</Text>
-            </TouchableOpacity>
-          </View>
+          <UserInfo selectUserList={selectUserList} />
         </View>
         <View style={styles.footer}>
           <Text style={styles.subTitle}>{constant.label.recommendedPost}</Text>
-          <ScrollView horizontal style={styles.sideScroll}>
+          <ScrollView horizontal style={styles.sideScroll} showsHorizontalScrollIndicator={false}>
             {otherFoodList.map((data: any) => (
               <View key={data.key}>
                 <FoodImage food={data} style={styles.image} />
@@ -173,45 +163,10 @@ const styles = StyleSheet.create({
     width: ITEM_WIDTH * 0.5,
   },
 
-  userInfocontainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 5,
-    paddingVertical: 5,
-  },
-  userInfo: {
-    paddingLeft: 5,
-    paddingTop: 10,
-  },
-  userImage: {
-    width: 60,
-    height: 60,
-  },
-  userName: {
-    fontSize: 16,
-    fontWeight: '500',
-  },
-  userId: {
-    fontSize: 14,
-  },
-
   footer: {
     paddingLeft: 10,
     paddingRight: 15,
     paddingVertical: 20,
-  },
-  buttonContainer: {
-    marginLeft: 'auto',
-    backgroundColor: '#467FD3',
-    borderRadius: 40,
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: 120,
-    height: 30,
-  },
-  buttonLabel: {
-    fontSize: 12,
-    color: '#ffffff',
   },
 
   imageContainer: {

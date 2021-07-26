@@ -1,4 +1,4 @@
-// キャンプ飯のジャンル。ホーム画面に表示する単位。
+// キャンプ飯のジャンル。ホーム画面に表示する単位
 export interface Genre {
   key: string;
   genru: string;
@@ -7,7 +7,7 @@ export interface Genre {
   genreImage: { uri: string };
 }
 
-// ジャンルのkeyにひもづくレシピ。
+// ジャンルのkeyにひもづくレシピ
 export interface Food {
   key: string;
   genru: string;
@@ -262,6 +262,112 @@ export const foodList: Food[] = [
         text: 'トマトホール缶、水、コンソメを加えて15分ほど煮て、塩こしょうで味を調える。',
         image: {
           uri: 'https://www.honda.co.jp/outdoor/recipe/2019-07/03/image/step03.jpg',
+        },
+      },
+    ],
+    point: '焦げないように。',
+  },
+  {
+    key: '5',
+    genru: 'meat',
+    userId: '@nanase_nisino',
+    title: '炭火焼で鶏チャーシュー',
+    foodImages: [
+      {
+        key: '1',
+        image: {
+          uri: 'https://www.honda.co.jp/outdoor/recipe/2018-04/01/image/feature_image.jpg',
+        },
+      },
+      {
+        key: '2',
+        image: {
+          uri: 'https://www.honda.co.jp/outdoor/recipe/2018-04/01/image/step03.jpg',
+        },
+      },
+    ],
+    material: [
+      '鶏もも肉',
+      '塩',
+      'こしょう',
+      'しょうゆ',
+      '酒',
+      'みりん',
+      'にんにく（チューブ）',
+      '生姜（チューブ）',
+    ],
+    procedure: [
+      {
+        key: '1',
+        text: '鶏もも肉を平たく伸ばし、厚い部分は切り開いて厚さを均等にする。皮を外側にしてロール状に巻く。',
+        image: {
+          uri: 'https://www.honda.co.jp/outdoor/recipe/2018-04/01/image/step01.jpg',
+        },
+      },
+      {
+        key: '2',
+        text: '＜STEP.1＞をたこ糸で縛り、皮全体にフォークなどで穴を数カ所開けて塩こしょうをふる。',
+        image: {
+          uri: 'https://www.honda.co.jp/outdoor/recipe/2018-04/01/image/step02.jpg',
+        },
+      },
+      {
+        key: '3',
+        text: '中火程度で全体に焼き色がつくように火を通し、弱火に移す。',
+        image: {
+          uri: 'https://www.honda.co.jp/outdoor/recipe/2018-04/01/image/step03.jpg',
+        },
+      },
+      {
+        key: '4',
+        text: 'タレをハケで塗りながら全体に味をつける。転がしながら何度も弱火でじっくりと焼いていく。',
+        image: {
+          uri: 'https://www.honda.co.jp/outdoor/recipe/2018-04/01/image/step04.jpg',
+        },
+      },
+    ],
+    point: '焦げないように。',
+  },
+  {
+    key: '6',
+    genru: 'meat',
+    userId: '@haruka_kiriya',
+    title: '炭火ローストビーフ燻製風味',
+    foodImages: [
+      {
+        key: '1',
+        image: {
+          uri: 'https://www.honda.co.jp/outdoor/recipe/2018-04/03/image/feature_image.jpg',
+        },
+      },
+      {
+        key: '2',
+        image: {
+          uri: 'https://www.honda.co.jp/outdoor/recipe/2018-04/03/image/step01.jpg',
+        },
+      },
+    ],
+    material: ['牛もも肉', 'にんにく', '塩', 'スモークチップ'],
+    procedure: [
+      {
+        key: '1',
+        text: '牛肉を常温に戻し、水分を拭き取り、半分に切ったにんにくを肉全体にこすりつけて香りをつけたら、全体的に塩をふる。',
+        image: {
+          uri: 'https://www.honda.co.jp/outdoor/recipe/2018-04/03/image/step01.jpg',
+        },
+      },
+      {
+        key: '2',
+        text: '強火で全面に焼き色をつける。',
+        image: {
+          uri: 'https://www.honda.co.jp/outdoor/recipe/2018-04/03/image/step02.jpg',
+        },
+      },
+      {
+        key: '3',
+        text: '肉にアルミトレーやアルミホイルなど蓋になるものを被せ、弱火にして約5分蒸し焼きにする。様子をみてひっくり返し、さらに約5分蒸し焼きにする。最後に炭にスモークチップを落とし、5分ほど燻す。',
+        image: {
+          uri: 'https://www.honda.co.jp/outdoor/recipe/2018-04/03/image/step03.jpg',
         },
       },
     ],
