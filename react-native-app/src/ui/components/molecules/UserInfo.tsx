@@ -2,8 +2,7 @@ import React from 'react';
 import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 import { UserImage } from 'src/ui/components/atoms/UserImage';
 import { User } from 'src/domain/models/user';
-
-import constant from 'src/i18n/ja.json';
+import { SwitchButton } from 'src/ui/components/atoms/SwitchButton';
 
 export interface Props {
   selectUserList: User[];
@@ -19,9 +18,9 @@ export const UserInfo = (props: Props) => {
           <Text style={styles.userName}>{selectUserList[0].userName}</Text>
           <Text style={styles.userId}>{selectUserList[0].userId}</Text>
         </View>
-        <TouchableOpacity style={styles.buttonContainer}>
-          <Text style={styles.buttonLabel}>{constant.button.follow}</Text>
-        </TouchableOpacity>
+        <View style={styles.buttonContainer}>
+          <SwitchButton isFollow={selectUserList[0].isFollow} />
+        </View>
       </TouchableOpacity>
     </View>
   );
@@ -51,15 +50,5 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginLeft: 'auto',
-    backgroundColor: '#467FD3',
-    borderRadius: 40,
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: 120,
-    height: 30,
-  },
-  buttonLabel: {
-    fontSize: 12,
-    color: '#ffffff',
   },
 });

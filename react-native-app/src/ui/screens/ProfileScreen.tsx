@@ -5,18 +5,23 @@ import Hyperlink from 'react-native-hyperlink';
 import Icon from 'react-native-vector-icons/Feather';
 
 import { ListImages } from 'src/ui/components/molecules/ListImages';
+import { UserImage } from 'src/ui/components/atoms/UserImage';
 import { FOLLOW_USERS, PROFILE_EDIT } from 'src/config/screens';
 import { useNavigation } from '@react-navigation/native';
 
 import constant from 'src/i18n/ja.json';
 
+import { postList } from 'src/domain/models/post';
+import { User, userList, loginUserId } from 'src/domain/models/user';
+
 // テスト用画像データ
 const backImages = [{ uri: 'https://www.bepal.net/wp-content/uploads/2020/07/IMG_9902.jpg' }];
-const profileImages = [
-  { uri: 'https://your-magazine.net/wp-content/uploads/2018/02/naganomei-35-a.jpg' },
-];
 
 export const ProfileScreen = () => {
+  // const { route } = props;
+  // const { userId } = route.params;
+  // ログインユーザーの情報取得
+  const profileUser: User[] = userList.filter((user) => user.userId === loginUserId);
   const { navigate } = useNavigation();
   const [backVisible, setIsBackVisible] = useState(false);
   const [profileVisible, setIsProfileVisible] = useState(false);
@@ -31,7 +36,7 @@ export const ProfileScreen = () => {
         onRequestClose={() => setIsBackVisible(false)}
       />
       <ImageView
-        images={profileImages}
+        images={[{ uri: profileUser[0].imageUrl }]}
         imageIndex={0}
         visible={profileVisible}
         swipeToCloseEnabled
@@ -43,7 +48,7 @@ export const ProfileScreen = () => {
             <Image style={styles.profileBackImage} resizeMode="stretch" source={backImages} />
           </TouchableOpacity>
           <TouchableOpacity style={styles.profileImage} onPress={() => setIsProfileVisible(true)}>
-            <Image style={styles.profileImage} resizeMode="contain" source={profileImages} />
+            <UserImage imageUrl={profileUser[0].imageUrl} style={styles.image} />
           </TouchableOpacity>
         </View>
         <View style={styles.userProfile}>
@@ -131,18 +136,24 @@ export const ProfileScreen = () => {
           </Hyperlink>
         </View>
       </View>
-      <ListImages />
+      <View style={styles.imageListContainer}>
+        <ListImages postList={postList} />
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  imageContainer: {
+    // height: 120,
+  },
   profileImage: {
+    // width: 100,
+    // height: 100,
+  },
+  image: {
     width: 100,
     height: 100,
-    borderRadius: 30,
-    paddingVertical: 35,
-    paddingHorizontal: 10,
   },
   profileBackImage: {
     ...StyleSheet.absoluteFillObject,
@@ -150,7 +161,6 @@ const styles = StyleSheet.create({
 
   profileContainer: {
     flex: 1,
-    marginBottom: 35,
   },
 
   countContainer: {
@@ -174,10 +184,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 16,
     textAlign: 'center',
-  },
-
-  imageContainer: {
-    height: 120,
   },
 
   container: {
@@ -243,5 +249,8 @@ const styles = StyleSheet.create({
   snsLink: {
     marginLeft: 5,
     fontSize: 12,
+  },
+  imageListContainer: {
+    flex: 1,
   },
 });

@@ -6,8 +6,19 @@ export interface User {
   isFollow: boolean;
   isFollower: boolean;
   imageUrl: string;
+  backImageUrl?: string;
   profile: string;
+  snsLink?: {
+    youtube?: string;
+    twitter?: string;
+    facebook?: string;
+    instagram?: string;
+    web?: string;
+  };
 }
+
+// 本来はUID
+export const loginUserId = '@mei_nagano';
 
 export const userList: User[] = [
   {
@@ -18,7 +29,15 @@ export const userList: User[] = [
     isFollow: true,
     isFollower: true,
     imageUrl: 'https://i.pinimg.com/736x/10/90/b9/1090b93f4ddc26c5dbafb69c376d99ca.jpg',
+    backImageUrl: 'https://your-magazine.net/wp-content/uploads/2018/02/naganomei-35-a.jpg',
     profile: 'キャンプ初心者です。よろしくお願いします！！',
+    snsLink: {
+      youtube: 'https://www.youtube.com/',
+      twitter: 'https://twitter.com/',
+      facebook: 'https://ja-jp.facebook.com/',
+      instagram: 'https://www.instagram.com/?hl=ja',
+      web: 'https://qiita.com/',
+    },
   },
   {
     key: '2',
