@@ -19,7 +19,7 @@ export const FollowFollowers = (props: Props) => {
 
   return (
     <View style={styles.container}>
-      <SearchBar searchText={searchUser} setSearchText={setSearchUser} />
+      <SearchBar searchText={searchUser} setSearchText={setSearchUser} setIsFocus={() => {}} />
       <UserList userList={displayUserList} />
       <SafeAreaView />
     </View>

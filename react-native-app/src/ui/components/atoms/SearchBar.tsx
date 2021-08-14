@@ -8,10 +8,11 @@ import constant from 'src/i18n/ja.json';
 export interface Props {
   searchText: string;
   setSearchText: Function;
+  setIsFocus: Function;
 }
 
 export const SearchBar = (props: Props) => {
-  const { searchText, setSearchText } = props;
+  const { searchText, setSearchText, setIsFocus } = props;
   return (
     <View style={styles.searchBarContainer}>
       <View>
@@ -27,6 +28,9 @@ export const SearchBar = (props: Props) => {
           placeholder={constant.label.search}
           keyboardType="default"
           returnKeyType="done"
+          onFocus={() => {
+            setIsFocus(true);
+          }}
         />
       </View>
     </View>

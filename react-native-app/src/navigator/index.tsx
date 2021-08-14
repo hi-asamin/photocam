@@ -8,6 +8,7 @@ import { HomeStack } from 'src/navigator/home';
 import { PostStack } from 'src/navigator/post';
 import { ProfileStack } from 'src/navigator/profile';
 import { NoticeStack } from 'src/navigator/notice';
+import { SearchStack } from 'src/navigator/search';
 
 import { bottomTabs } from 'src/config/screens';
 
@@ -22,6 +23,14 @@ export const Navigator = () => (
         options={{
           tabBarLabel: '',
           tabBarIcon: () => <MaterialCommunityIcons name="home" size={32} />,
+        }}
+      />
+      <Tab.Screen
+        name={bottomTabs.search}
+        component={SearchStack}
+        options={{
+          tabBarLabel: '',
+          tabBarIcon: () => <MaterialCommunityIcons name="magnify" size={32} />,
         }}
       />
       <Tab.Screen

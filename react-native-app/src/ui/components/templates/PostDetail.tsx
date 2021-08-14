@@ -59,12 +59,7 @@ export const PostDetail = (props: Props) => {
       <View style={styles.postImageContainer}>
         <Swiper loop={false}>
           {postList.postImages.map((data) => (
-            <Image
-              key={data.key}
-              style={styles.postImage}
-              resizeMode="contain"
-              source={data.image}
-            />
+            <Image key={data.key} style={styles.postImage} resizeMode="cover" source={data.image} />
           ))}
         </Swiper>
       </View>
@@ -134,7 +129,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 5,
-    paddingTop: 5,
+    paddingVertical: 5,
   },
   userInfo: {
     paddingLeft: 5,
