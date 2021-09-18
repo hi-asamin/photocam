@@ -16,9 +16,13 @@
   "rules": {
     "import/prefer-default-export": "off",
     "import/no-unresolved": "off",
+    "import/no-extraneous-dependencies": "off",
     "no-use-before-define": "off",
     "react/jsx-filename-extension": ["error", { "extensions": [".tsx", "jsx", ".ts", "js"] }],
     "complexity": ["error", 10],
-    "object-curly-newline": "off"
+    "object-curly-newline": "off",
+    "class-methods-use-this": "off", // thisを使用しないクラスメソッドがあると怒られる回避策
+    "no-unused-vars": "off", // interfaceに定義したメソッドの引数がエラーになる回対応策
+    "@typescript-eslint/no-unused-vars": "error" // interfaceに定義したメソッドの引数がエラーになる対応策
   }
 }
