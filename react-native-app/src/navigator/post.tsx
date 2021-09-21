@@ -3,6 +3,8 @@ import { Button } from 'react-native';
 import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack';
 import { useNavigation } from '@react-navigation/native';
 
+import { PostInteractor } from 'src/application/interactors/post-interactor';
+
 import { PostCreateScreen } from 'src/ui/screens/PostCreateScreen';
 import { PostEditScreen } from 'src/ui/screens/PostEditScreen';
 
@@ -16,7 +18,6 @@ export const PostStack = () => {
     <Stack.Navigator>
       <Stack.Screen
         name={POST_CREATE}
-        component={PostCreateScreen}
         options={{
           headerTitle: '新規投稿画面',
           cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS,
@@ -29,7 +30,9 @@ export const PostStack = () => {
             />
           ),
         }}
-      />
+      >
+        {() => <PostCreateScreen usecase={new PostInteractor()} />}
+      </Stack.Screen>
       <Stack.Screen name={POST_EDIT} component={PostEditScreen} />
     </Stack.Navigator>
   );
