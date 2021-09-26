@@ -1,4 +1,4 @@
-import { Post } from 'src/domain/models/post';
+import { PostFirebase } from 'src/domain/models/post';
 import { PostUsecase } from 'src/application/usecases/post-usecase';
 import { IPostRepository } from 'src/domain/repositories/i-post-repository';
 import { PostRepositroy } from 'src/interface/gateway/repositories/post-repository';
@@ -25,19 +25,19 @@ export class PostInteractor implements PostUsecase {
    * @member PostInteractor
    * @returns {Post[]} posts 投稿一覧
    */
-  getAllPosts(): void {
-    const posts: Post = this.postRepository.findAll();
-    console.log(posts);
+  getAllPosts(): PostFirebase[] {
+    const posts: PostFirebase[] = this.postRepository.findAll();
+    console.log('interactor', JSON.stringify(posts));
+    return posts;
   }
 
   /**
-   * addPost
+   * savePost
    * 投稿を保存する
-   * @param {string} body 投稿内容
+   * @param {PostFirebase} body 投稿内容
    * @member PostInteractor
    */
-  addPost(body: string): void {
-    console.log('add post');
-    this.postRepository.save(body);
+  savePost(content: PostFirebase): void {
+    this.postRepository.save(content);
   }
 }

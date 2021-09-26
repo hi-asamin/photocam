@@ -1,3 +1,13 @@
+/**
+ * 暫定投稿モデル
+ */
+export interface PostFirebase {
+  userId: string;
+  userName: string;
+  body: string;
+  createdAt: Date;
+}
+
 export interface Post {
   key: string;
   userName: string;
