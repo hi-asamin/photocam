@@ -1,46 +1,60 @@
 import firebase from 'firebase';
-import { Post } from 'src/domain/models/post';
+import { QuerySnapshot, DocumentData } from '@firebase/firestore-types';
+import { PostFirebase } from 'src/domain/models/post';
 import { IPostRepository } from 'src/domain/repositories/i-post-repository';
 
 import { translateErrorMessages } from 'src/util/firebase';
 
 export class PostRepositroy implements IPostRepository {
-  private className: string;
+  private collectionName: string;
 
   constructor() {
-    this.className = 'post repository';
+    this.collectionName = 'users/JWsX5nWR0bcKGO472gPRCdpEzaE2/memos';
   }
 
-  findAll(): Post {
-    console.log(`hello ${this.className}`);
+  findAll(): PostFirebase[] {
     const db = firebase.firestore();
-    const ref = db
-      .collection('users/JWsX5nWR0bcKGO472gPRCdpEzaE2/memos')
-      .orderBy('updatedAt', 'desc');
-    ref.onSnapshot((snapshot) => {
-      const userMemos: { id: string; bodyText: any; updatedAt: any }[] = [];
+    const ref = db.collection(this.collectionName).orderBy('updatedAt', 'desc');
+    const posts: PostFirebase[] = [];
+    ref.onSnapshot((snapshot: QuerySnapshot<DocumentData>) => {
       snapshot.forEach((doc) => {
         const data = doc.data();
-        userMemos.push({
-          id: doc.id,
-          bodyText: data.bodyText,
-          updatedAt: data.updatedAt.toDate(),
+        posts.push({
+          userId: data.userId,
+          userName: data.userName,
+          body: data.body,
+          createdAt: data.createdAt.toDate(),
         });
       });
-      console.log(userMemos);
     });
-    return {} as Post;
+    return posts;
   }
 
-  save(body: string): void {
-    console.log(`body: ${body}!`);
+  findByUserId(userId: string): PostFirebase[] {
     const db = firebase.firestore();
-    const ref = db.collection('users/JWsX5nWR0bcKGO472gPRCdpEzaE2/memos');
+    const ref = db.collection(this.collectionName).orderBy('updatedAt', 'desc');
+    const posts: PostFirebase[] = [];
+    ref.onSnapshot((snapshot: QuerySnapshot<DocumentData>) => {
+      snapshot.forEach((doc) => {
+        const data = doc.data();
+        if (data.userId === userId) {
+          posts.push({
+            userId: data.userId,
+            userName: data.userName,
+            body: data.body,
+            createdAt: data.createdAt.toDate(),
+          });
+        }
+      });
+    });
+    return posts;
+  }
+
+  save(content: PostFirebase): void {
+    const db = firebase.firestore();
+    const ref = db.collection(this.collectionName);
     ref
-      .add({
-        body,
-        updatedAt: new Date(),
-      })
+      .add(content)
       .then(() => {
         console.log('success save');
       })
@@ -49,6 +63,5 @@ export class PostRepositroy implements IPostRepository {
         console.log(errorMessage);
       })
       .finally(() => console.log('finally'));
-    console.log('finish add post');
   }
 }
